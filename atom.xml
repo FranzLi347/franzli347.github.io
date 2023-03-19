@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Franz`s blog</title>
+  <icon>https://www.gravatar.com/avatar/2e830db9ff9a923cf7910f87dbcb3f90</icon>
   
-  <subtitle>江畔何人初见月，江月何年初照人</subtitle>
   <link href="https://franzli347.github.io/atom.xml" rel="self"/>
   
   <link href="https://franzli347.github.io/"/>
-  <updated>2023-03-05T13:50:24.935Z</updated>
+  <updated>2023-03-18T13:42:44.527Z</updated>
   <id>https://franzli347.github.io/</id>
   
   <author>
     <name>Franz li</name>
-    
+    <email>franzli2003@163.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
@@ -21,51 +21,21 @@
     <link href="https://franzli347.github.io/2023/03/05/SpringBoot%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Starter/"/>
     <id>https://franzli347.github.io/2023/03/05/SpringBoot%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Starter/</id>
     <published>2023-03-05T13:33:26.000Z</published>
-    <updated>2023-03-05T13:50:24.935Z</updated>
+    <updated>2023-03-18T13:42:44.527Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>场景:开发API开放平台，提供java对应的客户端SDK</p></blockquote><ol><li><p>创建SpringBoot项目</p><p>包含以下依赖</p></li></ol><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!--自动生成meta-data--&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">         </span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><ol start="2"><li><p>修改<code>pom.xml</code></p><p>修改pom.xml为对应项目名称 </p><p>starter推荐命名 xxxxx-start</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.frz<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>frzApi-client-sdk<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>frzApi-client-sdk<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>frzApi-client-sdk<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>编写<code>AutoConfiguration</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(&quot;frzapi.client&quot;)</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@ComponentScan</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FrzApiClientConfig</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String accessKey;</span><br><span class="line">    <span class="keyword">private</span> String secretKey;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> FrzApiClient <span class="title function_">frzApiClient</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">FrzApiClient</span>(accessKey, secretKey);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>通过<code>ConfigurationProperties</code>注解能够读取application 中的配置属性</p></li><li><p>配置<code>EnableAutoConfiguration</code></p><p>在<code>resource/META-INF</code>创建<code>spring.factories</code>文件,设置</p><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">org.springframework.boot.autoconfigure.EnableAutoConfiguration</span>=<span class="string">xxx</span></span><br></pre></td></tr></table></figure><blockquote><p>xxx为配置类Reference</p></blockquote></li></ol><p><img src="/2023/03/05/SpringBoot%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Starter/im1.png" alt="目录结构" title="目录结构"></p><p>通过maven install 后即成功安装到本地maven仓库</p><p>在其他项目的依赖中添加</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.frz<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>frzApi-client-sdk<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><p>既可以正常使用</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;场景:开发API开放平台，提供java对应的客户端SDK&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;创建SpringBoot项目&lt;/p&gt;
-&lt;p&gt;包含以下依赖&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&quot;highl</summary>
-      
+    <summary type="html">开发API开放平台，提供java对应的客户端SDK</summary>
     
     
     
     
-    <category term="后端,java,SpringBoot" scheme="https://franzli347.github.io/tags/%E5%90%8E%E7%AB%AF-java-SpringBoot/"/>
+    <category term="后端" scheme="https://franzli347.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
     
-  </entry>
-  
-  <entry>
-    <title>测试文章</title>
-    <link href="https://franzli347.github.io/2023/03/05/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-    <id>https://franzli347.github.io/2023/03/05/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</id>
-    <published>2023-03-05T12:41:08.000Z</published>
-    <updated>2023-03-05T12:44:56.284Z</updated>
+    <category term="sprigboot" scheme="https://franzli347.github.io/tags/sprigboot/"/>
     
-    <content type="html"><![CDATA[<p>测试文章</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&#123;&#123; <span class="attr">padding</span>: <span class="string">&#x27;20px&#x27;</span>, <span class="attr">backgroundColor</span>: <span class="string">&#x27;tomato&#x27;</span> &#125;&#125;&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>This is JSX<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><p><img src="/2023/03/05/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/img1.png"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;测试文章&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;s</summary>
-      
-    
-    
-    
-    
-    <category term="测试" scheme="https://franzli347.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+    <category term="java" scheme="https://franzli347.github.io/tags/java/"/>
     
   </entry>
   

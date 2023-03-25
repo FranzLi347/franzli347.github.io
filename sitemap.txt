@@ -6,12 +6,11 @@ https://franzli347.github.io/about/index.html
 https://franzli347.github.io/collect/index.html
 https://franzli347.github.io/tags/index.html
 https://franzli347.github.io/
+https://franzli347.github.io/tags/webdav/
+https://franzli347.github.io/tags/Openresty/
 https://franzli347.github.io/tags/%E5%90%8E%E7%AB%AF/
-https://franzli347.github.io/tags/go/
+https://franzli347.github.io/tags/lua/
 https://franzli347.github.io/tags/sprigboot/
 https://franzli347.github.io/tags/java/
+https://franzli347.github.io/tags/go/
 https://franzli347.github.io/tags/%E7%AE%97%E6%B3%95/
-https://franzli347.github.io/tags/webdav/
-https://franzli347.github.io/tags/nginx/
-https://franzli347.github.io/tags/lua/
-https://franzli347.github.io/tags/Openresty/

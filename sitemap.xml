@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.frzli.top/2023/03/29/%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E4%BA%8B%E6%95%85%E7%9A%84%E5%8F%8D%E6%80%9D-MySQL%E4%B8%ADorder-by%E4%B8%8Elimit%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/</loc>
+    
+    <lastmod>2023-03-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.frzli.top/about/index.html</loc>
     
     <lastmod>2023-03-26</lastmod>
@@ -67,7 +76,7 @@
 
   <url>
     <loc>https://blog.frzli.top/</loc>
-    <lastmod>2023-03-26</lastmod>
+    <lastmod>2023-03-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,56 +84,63 @@
   
   <url>
     <loc>https://blog.frzli.top/tags/webdav/</loc>
-    <lastmod>2023-03-26</lastmod>
+    <lastmod>2023-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.frzli.top/tags/Openresty/</loc>
-    <lastmod>2023-03-26</lastmod>
+    <lastmod>2023-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2023-03-26</lastmod>
+    <lastmod>2023-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.frzli.top/tags/lua/</loc>
-    <lastmod>2023-03-26</lastmod>
+    <lastmod>2023-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.frzli.top/tags/sprigboot/</loc>
-    <lastmod>2023-03-26</lastmod>
+    <lastmod>2023-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.frzli.top/tags/java/</loc>
-    <lastmod>2023-03-26</lastmod>
+    <lastmod>2023-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.frzli.top/tags/go/</loc>
-    <lastmod>2023-03-26</lastmod>
+    <lastmod>2023-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.frzli.top/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2023-03-26</lastmod>
+    <lastmod>2023-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.frzli.top/tags/MySQL/</loc>
+    <lastmod>2023-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

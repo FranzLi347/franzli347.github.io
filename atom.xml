@@ -6,7 +6,7 @@
   <link href="https://blog.frzli.top/atom.xml" rel="self"/>
   
   <link href="https://blog.frzli.top/"/>
-  <updated>2023-03-25T13:39:43.793Z</updated>
+  <updated>2023-03-29T06:32:10.444Z</updated>
   <id>https://blog.frzli.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一次线上事故的反思-MySQL中order by与limit一起使用的坑</title>
+    <link href="https://blog.frzli.top/2023/03/29/%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E4%BA%8B%E6%95%85%E7%9A%84%E5%8F%8D%E6%80%9D-MySQL%E4%B8%ADorder-by%E4%B8%8Elimit%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/"/>
+    <id>https://blog.frzli.top/2023/03/29/%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E4%BA%8B%E6%95%85%E7%9A%84%E5%8F%8D%E6%80%9D-MySQL%E4%B8%ADorder-by%E4%B8%8Elimit%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/</id>
+    <published>2023-03-29T01:11:36.000Z</published>
+    <updated>2023-03-29T06:32:10.444Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h2><p>一个新项目提供了一个查询所有Bucket的接口，同时使用了Order By 和 limit 同时进行排序和分页查询</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line"><span class="operator">*</span> </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">tb_bucket </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">uid <span class="operator">=</span> $&#123;userId&#125; </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">create_time <span class="keyword">DESC</span> </span><br><span class="line">    limit $&#123;(page <span class="operator">-</span> <span class="number">1</span>)<span class="operator">*</span>size&#125;, #&#123;size&#125;</span><br></pre></td></tr></table></figure><p>上线后前端反馈数据出现来回跳动，数据一会出现在第一页一会出现在第二页，导致数据一部分缺失一部分重复</p><p><img src="F:\project\franz-blog\source_posts\一次线上事故的反思-MySQL中order-by与limit一起使用的坑\image-20230329092527083.png" alt="image-20230329092527083"></p><p><img src="F:\project\franz-blog\source_posts\一次线上事故的反思-MySQL中order-by与limit一起使用的坑\image-20230329092538575.png" alt="image-20230329092538575"></p><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>发生问题后首先检查了一遍代码逻辑，并未发现其他问题，当把SQL拿出来单独执行的时候出现了数据错误的问题。发现出现数据错误的数据都有相同的create_time，而SQL又是基于create_time排序的，故怀疑order by 和 limit 同时使用的问题。<strong>以create_time进行降序排序，当create_time存在多条重复时基于limit分页出现数据错误问题。</strong></p><p>查阅了MySQL的官方文档发现的MySQL limit的查询优化所导致</p><blockquote><p>If multiple rows have identical values in the <code>ORDER BY</code> columns, the server is free to return those rows in any order, and may do so differently depending on the overall execution plan. In other words, the sort order of those rows is nondeterministic with respect to the nonordered columns</p></blockquote><p>大意就是<strong>如果多个行在“ORDER BY”列中具有相同的值，服务器可以自由地以任何顺序返回这些行，并且可能会根据整体执行计划以不同的方式返回。换句话说，这些行的排序顺序相对于未排序的列是不确定的</strong>。</p><p><a href="https://dev.mysql.com/doc/refman/8.0/en/limit-optimization.html">MySQL 官方文档原文</a></p><h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><p>解决思路是：避免ORDER BY列的值出现重复。因此，可以加入排序列，比如id等等。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line"><span class="operator">*</span> </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">tb_bucket </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">uid <span class="operator">=</span> $&#123;userId&#125; </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">create_time <span class="keyword">DESC</span> id <span class="keyword">ASC</span></span><br><span class="line">    limit $&#123;(page <span class="operator">-</span> <span class="number">1</span>)<span class="operator">*</span>size&#125;, #&#123;size&#125;</span><br></pre></td></tr></table></figure><p>加入id作为排序条件后，数据混乱的问题解决</p><p><img src="F:\project\franz-blog\source_posts\一次线上事故的反思-MySQL中order-by与limit一起使用的坑\image-20230329142622876.png" alt="image-20230329142622876"></p><p><img src="F:\project\franz-blog\source_posts\一次线上事故的反思-MySQL中order-by与limit一起使用的坑\image-20230329142652385.png" alt="image-20230329142652385"></p>]]></content>
+    
+    
+    <summary type="html">一次线上事故的反思-MySQL中order by与limit一起使用的坑</summary>
+    
+    
+    
+    
+    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="MySQL" scheme="https://blog.frzli.top/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>Openresty 实现 WebDAV 功能 ，并且实现在 WebDAV 下多用户认证以及访问目录控制</title>

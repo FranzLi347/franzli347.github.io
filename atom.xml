@@ -6,7 +6,7 @@
   <link href="https://blog.frzli.top/atom.xml" rel="self"/>
   
   <link href="https://blog.frzli.top/"/>
-  <updated>2023-04-06T03:52:11.929Z</updated>
+  <updated>2023-04-12T12:49:14.088Z</updated>
   <id>https://blog.frzli.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nginx 中使用中文路径使用 try_files 的一些坑</title>
+    <link href="https://blog.frzli.top/2023/04/12/nginx-%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84%E4%BD%BF%E7%94%A8-try-files-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/"/>
+    <id>https://blog.frzli.top/2023/04/12/nginx-%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84%E4%BD%BF%E7%94%A8-try-files-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/</id>
+    <published>2023-04-12T12:38:05.000Z</published>
+    <updated>2023-04-12T12:49:14.088Z</updated>
+    
+    <content type="html"><![CDATA[<p>nginx 配置如下</p><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">location</span> <span class="string">~ /download/(?&lt;filename&gt;.*) &#123;</span></span><br><span class="line">            <span class="attr">set</span> <span class="string">$bid &quot;&quot;;</span></span><br><span class="line">            <span class="attr">set</span> <span class="string">$filename $1;</span></span><br><span class="line">            <span class="attr">access_by_lua_file</span> <span class="string">lua/auth.lua;</span></span><br><span class="line">            <span class="attr">root</span> <span class="string">/toss/;</span></span><br><span class="line">            <span class="attr">try_files</span> <span class="string">/$bid/$filename /$filename =404;</span></span><br><span class="line">            <span class="attr">lua_code_cache</span> <span class="string">off;</span></span><br><span class="line">        <span class="attr">charset</span> <span class="string">utf-8;        </span></span><br><span class="line"><span class="attr">&#125;</span></span><br></pre></td></tr></table></figure><p>当通过 <a href="http://example.com/download/%E6%B5%8B%E8%AF%95.jpg">http://example.com/download/测试.jpg</a> 时出现404 no found问题</p><p>原因是filename变量是通过urlencode后的值，nginx在磁盘中找不到该文件</p><p>解决方法: 通过access_by_lua_file解码并修改更改filename的值</p><p>核心代码如下：</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">urlDecode</span><span class="params">(s)</span></span></span><br><span class="line">    s = <span class="built_in">string</span>.<span class="built_in">gsub</span>(s, <span class="string">&#x27;%%(%x%x)&#x27;</span>, <span class="function"><span class="keyword">function</span><span class="params">(h)</span></span> <span class="keyword">return</span> <span class="built_in">string</span>.<span class="built_in">char</span>(<span class="built_in">tonumber</span>(h, <span class="number">16</span>)) <span class="keyword">end</span>)</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">ngx.var.filename = urlDecode(ngx.var.filename)</span><br></pre></td></tr></table></figure><p>如果解码之后还是出现404 no found可以使用<code>locale</code>检查一下服务器编码确定是utf-8编码，即LANG&#x3D;en_US.utf8 并且在location块配置charset utf-8;</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;nginx 配置如下&lt;/p&gt;
+&lt;figure class=&quot;highlight properties&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="nginx" scheme="https://blog.frzli.top/tags/nginx/"/>
+    
+  </entry>
   
   <entry>
     <title>Openresty 实现 WebDAV 功能 ，并且实现在 WebDAV 下多用户认证以及访问目录控制 - 2</title>

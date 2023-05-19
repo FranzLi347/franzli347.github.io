@@ -6,7 +6,7 @@
   <link href="https://blog.frzli.top/atom.xml" rel="self"/>
   
   <link href="https://blog.frzli.top/"/>
-  <updated>2023-04-12T12:49:14.088Z</updated>
+  <updated>2023-05-19T03:22:12.693Z</updated>
   <id>https://blog.frzli.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sse 的原理以及java下的简单实现</title>
+    <link href="https://blog.frzli.top/2023/05/19/sse%20%E7%9A%84%E5%8E%9F%E7%90%86%E4%BB%A5%E5%8F%8Ajava%E4%B8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://blog.frzli.top/2023/05/19/sse%20%E7%9A%84%E5%8E%9F%E7%90%86%E4%BB%A5%E5%8F%8Ajava%E4%B8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</id>
+    <published>2023-05-19T02:39:27.000Z</published>
+    <updated>2023-05-19T03:22:12.693Z</updated>
+    
+    <content type="html"><![CDATA[<p>前段时间看到gpt返回时的部分输出的效果，觉得很有意思，所以研究了下是怎么实现的。</p><p>主要是通过sse（Server-Sent Events）技术实现的这种效果</p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>SSE（Server-Sent Events）和WebSocket都是用于实现服务器和客户端之间的实时通信的技术，但它们有一些区别。</p><p>SSE是一种单向通信协议，它允许服务器向客户端发送事件流。客户端通过一个持久化的HTTP连接接收事件流，这个连接可以保持打开状态，直到客户端关闭连接或服务器关闭连接。</p><p>WebSocket是一种双向通信协议，它允许服务器和客户端之间进行实时双向通信。WebSocket通过一个持久化的TCP连接实现双向通信，客户端和服务器可以随时发送消息。</p><h2 id="sse"><a href="#sse" class="headerlink" title="sse"></a>sse</h2><h3 id="1-如何保持长连接"><a href="#1-如何保持长连接" class="headerlink" title="1.如何保持长连接"></a>1.如何保持长连接</h3><p>在http 1.1下Keep-Alive模式默认开启，服务端会通过tcp协议发送一个不带数据的ack请求，确保客户端的在线。</p><h3 id="2-如何判断数据完整性"><a href="#2-如何判断数据完整性" class="headerlink" title="2.如何判断数据完整性"></a>2.如何判断数据完整性</h3><p>当客户端接收到数据后会通过判断<code>Content-Length</code>或者<code>Transfer-Encoding</code>响应头判断哪一部分是完整数据。</p><h3 id="3-客户端如何判断是sse"><a href="#3-客户端如何判断是sse" class="headerlink" title="3.客户端如何判断是sse"></a>3.客户端如何判断是sse</h3><p>通过客户端设置响应头<code>Content-type</code>为<code>text/event-stream</code>。</p><p>![image-20230519105824786](F:\project\franz-blog\source_posts\sse 的原理以及java下的简单实现\image-20230519105824786-1684465110715-1.png)</p><h3 id="java简单代码实现"><a href="#java简单代码实现" class="headerlink" title="java简单代码实现"></a>java简单代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(urlPatterns = &quot;/streaming&quot;,asyncSupported = true)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">StreamingServlet</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1L</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">ExecutorService</span> <span class="variable">executorService</span> <span class="operator">=</span> Executors.newCachedThreadPool();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span><br><span class="line">        <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="comment">// 设置响应内容类型为SSE</span></span><br><span class="line">        response.setContentType(<span class="string">&quot;text/event-stream&quot;</span>);</span><br><span class="line">        response.setCharacterEncoding(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">        <span class="comment">// 开启异步上下文</span></span><br><span class="line">        <span class="keyword">final</span> <span class="type">AsyncContext</span> <span class="variable">asyncContext</span> <span class="operator">=</span> request.startAsync();</span><br><span class="line">        <span class="comment">// 使用线程池执行任务</span></span><br><span class="line">        executorService.execute(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="type">PrintWriter</span> <span class="variable">writer</span> <span class="operator">=</span> response.getWriter();</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">                    <span class="comment">// 发送数据</span></span><br><span class="line">                    writer.write(<span class="string">&quot;data: &quot;</span> + i + <span class="string">&quot;\n\n&quot;</span>);</span><br><span class="line">                    writer.flush();</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 模拟数据产生的延迟</span></span><br><span class="line">                    Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException | InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                asyncContext.complete();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 关闭线程池</span></span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>效果</p><p>![image-20230519110903114](F:\project\franz-blog\source_posts\sse 的原理以及java下的简单实现\image-20230519110903114-1684465747261-3.png)</p><h4 id="AsyncContext"><a href="#AsyncContext" class="headerlink" title="AsyncContext"></a>AsyncContext</h4><p>看到别人实现sse时都使用的AsyncContext，但是并不知道有啥用,查询资料后得知</p><p>使用<code>final AsyncContext asyncContext = request.startAsync();</code>可以实现Servlet 线程将请求转交给一个异步线程来执行业务处理，线程本身返回至容器，等待异步线程任务结束后可以直接生成响应数据。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;前段时间看到gpt返回时的部分输出的效果，觉得很有意思，所以研究了下是怎么实现的。&lt;/p&gt;
+&lt;p&gt;主要是通过sse（Server-Sent Events）技术实现的这种效果&lt;/p&gt;
+&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; t</summary>
+      
+    
+    
+    
+    
+    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="java" scheme="https://blog.frzli.top/tags/java/"/>
+    
+    <category term="sse" scheme="https://blog.frzli.top/tags/sse/"/>
+    
+  </entry>
   
   <entry>
     <title>nginx 中使用中文路径使用 try_files 的一些坑</title>

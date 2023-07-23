@@ -6,7 +6,7 @@
   <link href="https://blog.frzli.top/atom.xml" rel="self"/>
   
   <link href="https://blog.frzli.top/"/>
-  <updated>2023-07-20T10:28:44.822Z</updated>
+  <updated>2023-07-23T07:46:05.274Z</updated>
   <id>https://blog.frzli.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jvm内存模型</title>
+    <link href="https://blog.frzli.top/2023/07/23/jvm%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://blog.frzli.top/2023/07/23/jvm%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</id>
+    <published>2023-07-23T07:40:46.000Z</published>
+    <updated>2023-07-23T07:46:05.274Z</updated>
+    
+    <content type="html"><![CDATA[<div style="overflow: auto;">    <img src="./image-20230723144425805.png" style="float:left;width:49%">    <img src="./image-20230723144655147.png" style="float:right;width:49%"></div><h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>堆内存主要用于存储以下内容：</p><ol><li>对象实例：堆内存中存储了Java应用程序创建的所有对象实例以及其实例变量。而每个对象实例的方法仅在方法区中存储一次，不会为每个对象实例单独存储。</li><li>数组：在堆中分配空间以存储数组元素。</li></ol><p>堆内存是垃圾回收器（Garbage Collector, GC）的主要工作区域。在此区域中，垃圾回收器负责自动回收不再使用的对象以释放内存资源。</p><h4 id="堆内存的划分"><a href="#堆内存的划分" class="headerlink" title="堆内存的划分"></a>堆内存的划分</h4><p><img src="/2023/07/23/jvm%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/image.png" alt="image"></p><h5 id="年轻代（Young-Generation）"><a href="#年轻代（Young-Generation）" class="headerlink" title="年轻代（Young Generation）"></a>年轻代（Young Generation）</h5><p>年轻代主要用于存储新创建的对象。它分为以下三个区域：</p><ol><li><p>Eden区：新创建的对象首先分配在这里。当Eden区满时，触发Minor GC（小型垃圾回收）。</p></li><li><p>Survivor区 S0(Survivor Space 0)：存活的对象从Eden区移动至S0区。</p></li><li><p>Survivor S1区(Survivor Space 1)：存活对象在S0和S1之间来回复制，每经过一个GC周期，它们将从一个Survivor区移动到另一个Survivor区。最终，经过若干次GC后，仍存活的对象将被移动到老年代。</p></li></ol><h5 id="老年代（Old-Generation）"><a href="#老年代（Old-Generation）" class="headerlink" title="老年代（Old Generation）"></a>老年代（Old Generation）</h5><p>长寿命周期的对象会被移动到这个区域。老年代比年轻代更大，且垃圾回收的频率较低。当老年代内存不足时，将触发Full GC（全面垃圾回收），清理年轻代和老年代中的对象。</p><h4 id="堆内存中对象区域迁移过程"><a href="#堆内存中对象区域迁移过程" class="headerlink" title="堆内存中对象区域迁移过程"></a>堆内存中对象区域迁移过程</h4><ol><li>当新的对象创建时，首先在年轻代的Eden区分配内存。大多数对象在这个阶段就变得不可达，因此在接下来的Minor GC（小型垃圾回收）中会被回收。</li><li>当Eden区满时，Minor GC会触发。此时，垃圾回收器会清理Eden区并将存活对象移至Survivor区之一（例如Survivor S0区）。</li><li>在接下来的Minor GC中，垃圾回收器将再次清理Eden区。此次回收过程中，已在Survivor S0区的存活对象将与新存活的Eden区对象一并移动到Survivor S1区。与此同时，Survivor S0区的对象将被清理。</li><li>存活对象会在Survivor S0区和Survivor S1区之间来回迁移，直到达到一定年龄阈值（由JVM参数-XX:MaxTenuringThreshold设置）。一旦达到阈值，该对象将被移动到老年代（Old Generation）。</li><li>老年代用于存储长寿命周期的对象。当老年代的空间不足时，会触发Full GC（全面垃圾回收），此时包括年轻代和老年代在内的整个堆空间都会被回收。Full GC相比于Minor GC，效率较低，可能导致应用程序暂停(jvm调优往往是为了防止Full GC)</li></ol><h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>方法区会存储已被虚拟机加载的 类信息、字段信息、方法信息、常量、静态变量、即时编译器编译后的代码缓存等数据。JDK 1.7中的永久代位于堆空间中，用于存储类元数据、字符串池等内容；而JDK 1.8中的元空间位于本地内存中，替换了永久代。</p><h4 id="为什么将永久代替换为元空间"><a href="#为什么将永久代替换为元空间" class="headerlink" title="为什么将永久代替换为元空间"></a>为什么将永久代替换为元空间</h4><p>永久代的大小是固定的，当类的元数据超过可用空间时，可能导致OutOfMemoryError。元空间位于本地内存（原生内存）中，可分配的空间更大，因此可降低因永久代限制导致内存溢出的风险。</p><h3 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h3><p>虚拟机栈由栈帧构成，每次除native方法外的方法调用与返回对应了虚拟机栈的压入和弹出。</p><p>栈帧的构成 </p><p><img src="/2023/07/23/jvm%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/image-1.png" alt="image-1"></p><h4 id="局部变量表"><a href="#局部变量表" class="headerlink" title="局部变量表"></a>局部变量表</h4><p>用于存储该方法中定义的局部变量，包括基本数据类型、对象引用以及返回地址。局部变量表的大小在编译时确定，并在栈帧创建时分配内存。局部变量表中的索引从 0 开始，直到局部变量表的最大长度。</p><h4 id="操作数栈"><a href="#操作数栈" class="headerlink" title="操作数栈"></a>操作数栈</h4><p>用于在执行字节码指令时存储临时值、计算过程中的操作数和结果。操作数栈的最大深度由编译期确定，并在创建栈帧时分配内存。</p><h4 id="动态链接"><a href="#动态链接" class="headerlink" title="动态链接"></a>动态链接</h4><p>栈帧中存储有指向运行时常量池（Runtime Constant Pool）中该方法所属类的引用。采用动态链接机制可在运行时解析并访问类中的方法和字段。</p><h4 id="方法返回地址"><a href="#方法返回地址" class="headerlink" title="方法返回地址"></a>方法返回地址</h4><p>方法执行完毕后，需要将控制权返回给调用方法，方法返回地址负责记住调用方法中的下一条指令地址。这样，在执行完被调用方法后，便可从调用方法中的该地址恢复执行。</p><h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><p>类似虚拟机栈，用于native方法</p><h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>指向下一条要执行的指令</p><h3 id="运行时常量池"><a href="#运行时常量池" class="headerlink" title="运行时常量池"></a>运行时常量池</h3><p>存储字面量和符号引用：运行时常量池主要用于存储编译期生成的各种字面量（如字符串、数字常量）和符号引用（如类名、字段名称、方法名称及描述符）。这些数据在类加载到JVM后，会存储于运行时常量池中。</p><h3 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h3><p>直接内存（Direct Memory）是指 Java 虚拟机（JVM）外的本地内存（Native Memory）。直接内存不受 JVM 堆内存管理和垃圾回收（GC）的控制。</p><h3 id="jdk1-7和jdk1-8内存模型区别"><a href="#jdk1-7和jdk1-8内存模型区别" class="headerlink" title="jdk1.7和jdk1.8内存模型区别"></a>jdk1.7和jdk1.8内存模型区别</h3><ol><li>PermGen（永久代）和 Metaspace（元空间）：在JDK 1.7中，类元数据存储在名为PermGen（永久代）的内存区域中，这是一个受限的空间。当PermGen空间不足时，会引发OutOfMemoryError。而在JDK 1.8中，PermGen被Metaspace（元空间）所替代，它是存在于本地内存（而非堆内存）中的一块更大的区域。由于Metaspace不限制大小，因此它能有效地避免因PermGen导致的内存溢出错误。</li><li>JDK 1.8引入了字符串去重机制，通过G1垃圾回收器来减少相同字符串在堆内存中的存储，从而节省内存空间。但在JDK 1.7中，并没有这个功能。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div style=&quot;overflow: auto;&quot;&gt;
+    &lt;img src=&quot;./image-20230723144425805.png&quot; style=&quot;float:left;width:49%&quot;&gt;
+    &lt;img src=&quot;./image-2023072314465</summary>
+      
+    
+    
+    
+    
+    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="jvm" scheme="https://blog.frzli.top/tags/jvm/"/>
+    
+  </entry>
   
   <entry>
     <title>接口aes+rsa加密实践</title>

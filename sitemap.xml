@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.frzli.top/2023/07/30/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/</loc>
+    
+    <lastmod>2023-07-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.frzli.top/2023/07/24/%E4%BD%BF%E7%94%A8github-action-%E5%AE%9E%E7%8E%B0-maven-%E5%A4%9A%E6%A8%A1%E5%9D%97%E7%BC%96%E8%AF%91-Spring-Boot-native-image/</loc>
     
     <lastmod>2023-07-30</lastmod>

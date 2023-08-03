@@ -3,11 +3,11 @@
   <title>Franz`s blog</title>
   <icon>https://www.gravatar.com/avatar/2e830db9ff9a923cf7910f87dbcb3f90</icon>
   
-  <link href="https://blog.frzli.top/atom.xml" rel="self"/>
+  <link href="https://blog.741588.xyz/atom.xml" rel="self"/>
   
-  <link href="https://blog.frzli.top/"/>
+  <link href="https://blog.741588.xyz/"/>
   <updated>2023-07-30T07:40:41.346Z</updated>
-  <id>https://blog.frzli.top/</id>
+  <id>https://blog.741588.xyz/</id>
   
   <author>
     <name>Franz li</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>快慢指针</title>
-    <link href="https://blog.frzli.top/2023/07/30/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/"/>
-    <id>https://blog.frzli.top/2023/07/30/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/</id>
+    <link href="https://blog.741588.xyz/2023/07/30/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/"/>
+    <id>https://blog.741588.xyz/2023/07/30/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/</id>
     <published>2023-07-30T07:38:30.000Z</published>
     <updated>2023-07-30T07:40:41.346Z</updated>
     
@@ -38,14 +38,14 @@
     
     
     
-    <category term="算法" scheme="https://blog.frzli.top/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://blog.741588.xyz/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>java类型与包装类型缓存机制</title>
-    <link href="https://blog.frzli.top/2023/07/30/java%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"/>
-    <id>https://blog.frzli.top/2023/07/30/java%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/</id>
+    <link href="https://blog.741588.xyz/2023/07/30/java%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"/>
+    <id>https://blog.741588.xyz/2023/07/30/java%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/</id>
     <published>2023-07-30T06:01:49.000Z</published>
     <updated>2023-07-30T06:06:07.948Z</updated>
     
@@ -62,14 +62,14 @@
     
     
     
-    <category term="java" scheme="https://blog.frzli.top/tags/java/"/>
+    <category term="java" scheme="https://blog.741588.xyz/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>使用github action 实现 maven 多模块编译 Spring Boot native image</title>
-    <link href="https://blog.frzli.top/2023/07/24/%E4%BD%BF%E7%94%A8github-action-%E5%AE%9E%E7%8E%B0-maven-%E5%A4%9A%E6%A8%A1%E5%9D%97%E7%BC%96%E8%AF%91-Spring-Boot-native-image/"/>
-    <id>https://blog.frzli.top/2023/07/24/%E4%BD%BF%E7%94%A8github-action-%E5%AE%9E%E7%8E%B0-maven-%E5%A4%9A%E6%A8%A1%E5%9D%97%E7%BC%96%E8%AF%91-Spring-Boot-native-image/</id>
+    <link href="https://blog.741588.xyz/2023/07/24/%E4%BD%BF%E7%94%A8github-action-%E5%AE%9E%E7%8E%B0-maven-%E5%A4%9A%E6%A8%A1%E5%9D%97%E7%BC%96%E8%AF%91-Spring-Boot-native-image/"/>
+    <id>https://blog.741588.xyz/2023/07/24/%E4%BD%BF%E7%94%A8github-action-%E5%AE%9E%E7%8E%B0-maven-%E5%A4%9A%E6%A8%A1%E5%9D%97%E7%BC%96%E8%AF%91-Spring-Boot-native-image/</id>
     <published>2023-07-24T09:09:58.000Z</published>
     <updated>2023-07-30T06:07:27.486Z</updated>
     
@@ -86,18 +86,18 @@
     
     
     
-    <category term="github action" scheme="https://blog.frzli.top/tags/github-action/"/>
+    <category term="github action" scheme="https://blog.741588.xyz/tags/github-action/"/>
     
-    <category term="maven" scheme="https://blog.frzli.top/tags/maven/"/>
+    <category term="maven" scheme="https://blog.741588.xyz/tags/maven/"/>
     
-    <category term="native image" scheme="https://blog.frzli.top/tags/native-image/"/>
+    <category term="native image" scheme="https://blog.741588.xyz/tags/native-image/"/>
     
   </entry>
   
   <entry>
     <title>jvm内存模型</title>
-    <link href="https://blog.frzli.top/2023/07/23/jvm%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
-    <id>https://blog.frzli.top/2023/07/23/jvm%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</id>
+    <link href="https://blog.741588.xyz/2023/07/23/jvm%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://blog.741588.xyz/2023/07/23/jvm%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</id>
     <published>2023-07-23T07:40:46.000Z</published>
     <updated>2023-07-23T07:46:05.274Z</updated>
     
@@ -114,16 +114,16 @@
     
     
     
-    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    <category term="后端" scheme="https://blog.741588.xyz/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="jvm" scheme="https://blog.frzli.top/tags/jvm/"/>
+    <category term="jvm" scheme="https://blog.741588.xyz/tags/jvm/"/>
     
   </entry>
   
   <entry>
     <title>接口aes+rsa加密实践</title>
-    <link href="https://blog.frzli.top/2023/07/20/%E6%8E%A5%E5%8F%A3aes-rsa%E5%8A%A0%E5%AF%86%E5%AE%9E%E8%B7%B5/"/>
-    <id>https://blog.frzli.top/2023/07/20/%E6%8E%A5%E5%8F%A3aes-rsa%E5%8A%A0%E5%AF%86%E5%AE%9E%E8%B7%B5/</id>
+    <link href="https://blog.741588.xyz/2023/07/20/%E6%8E%A5%E5%8F%A3aes-rsa%E5%8A%A0%E5%AF%86%E5%AE%9E%E8%B7%B5/"/>
+    <id>https://blog.741588.xyz/2023/07/20/%E6%8E%A5%E5%8F%A3aes-rsa%E5%8A%A0%E5%AF%86%E5%AE%9E%E8%B7%B5/</id>
     <published>2023-07-20T10:02:42.000Z</published>
     <updated>2023-07-20T10:28:44.822Z</updated>
     
@@ -141,20 +141,20 @@
     
     
     
-    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    <category term="后端" scheme="https://blog.741588.xyz/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="java" scheme="https://blog.frzli.top/tags/java/"/>
+    <category term="java" scheme="https://blog.741588.xyz/tags/java/"/>
     
-    <category term="加密" scheme="https://blog.frzli.top/tags/%E5%8A%A0%E5%AF%86/"/>
+    <category term="加密" scheme="https://blog.741588.xyz/tags/%E5%8A%A0%E5%AF%86/"/>
     
-    <category term="前端" scheme="https://blog.frzli.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://blog.741588.xyz/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>分布式调度视频转码实践</title>
-    <link href="https://blog.frzli.top/2023/07/01/%E5%88%86%E5%B8%83%E5%BC%8F%E8%B0%83%E5%BA%A6%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%AE%9E%E8%B7%B5/"/>
-    <id>https://blog.frzli.top/2023/07/01/%E5%88%86%E5%B8%83%E5%BC%8F%E8%B0%83%E5%BA%A6%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%AE%9E%E8%B7%B5/</id>
+    <link href="https://blog.741588.xyz/2023/07/01/%E5%88%86%E5%B8%83%E5%BC%8F%E8%B0%83%E5%BA%A6%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%AE%9E%E8%B7%B5/"/>
+    <id>https://blog.741588.xyz/2023/07/01/%E5%88%86%E5%B8%83%E5%BC%8F%E8%B0%83%E5%BA%A6%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%AE%9E%E8%B7%B5/</id>
     <published>2023-07-01T08:54:16.000Z</published>
     <updated>2023-07-20T09:57:28.627Z</updated>
     
@@ -173,20 +173,20 @@
     
     
     
-    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    <category term="后端" scheme="https://blog.741588.xyz/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="ffmpeg" scheme="https://blog.frzli.top/tags/ffmpeg/"/>
+    <category term="ffmpeg" scheme="https://blog.741588.xyz/tags/ffmpeg/"/>
     
-    <category term="xxl-job" scheme="https://blog.frzli.top/tags/xxl-job/"/>
+    <category term="xxl-job" scheme="https://blog.741588.xyz/tags/xxl-job/"/>
     
-    <category term="minio" scheme="https://blog.frzli.top/tags/minio/"/>
+    <category term="minio" scheme="https://blog.741588.xyz/tags/minio/"/>
     
   </entry>
   
   <entry>
     <title>sso模式之URL重定向传播会话</title>
-    <link href="https://blog.frzli.top/2023/06/05/sso%E6%A8%A1%E5%BC%8F%E4%B9%8BURL%E9%87%8D%E5%AE%9A%E5%90%91%E4%BC%A0%E6%92%AD%E4%BC%9A%E8%AF%9D/"/>
-    <id>https://blog.frzli.top/2023/06/05/sso%E6%A8%A1%E5%BC%8F%E4%B9%8BURL%E9%87%8D%E5%AE%9A%E5%90%91%E4%BC%A0%E6%92%AD%E4%BC%9A%E8%AF%9D/</id>
+    <link href="https://blog.741588.xyz/2023/06/05/sso%E6%A8%A1%E5%BC%8F%E4%B9%8BURL%E9%87%8D%E5%AE%9A%E5%90%91%E4%BC%A0%E6%92%AD%E4%BC%9A%E8%AF%9D/"/>
+    <id>https://blog.741588.xyz/2023/06/05/sso%E6%A8%A1%E5%BC%8F%E4%B9%8BURL%E9%87%8D%E5%AE%9A%E5%90%91%E4%BC%A0%E6%92%AD%E4%BC%9A%E8%AF%9D/</id>
     <published>2023-06-05T11:49:04.000Z</published>
     <updated>2023-07-20T09:54:53.648Z</updated>
     
@@ -201,18 +201,18 @@
     
     
     
-    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    <category term="后端" scheme="https://blog.741588.xyz/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="go" scheme="https://blog.frzli.top/tags/go/"/>
+    <category term="go" scheme="https://blog.741588.xyz/tags/go/"/>
     
-    <category term="sso" scheme="https://blog.frzli.top/tags/sso/"/>
+    <category term="sso" scheme="https://blog.741588.xyz/tags/sso/"/>
     
   </entry>
   
   <entry>
     <title>sse 的原理以及java下的简单实现</title>
-    <link href="https://blog.frzli.top/2023/05/19/sse%20%E7%9A%84%E5%8E%9F%E7%90%86%E4%BB%A5%E5%8F%8Ajava%E4%B8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://blog.frzli.top/2023/05/19/sse%20%E7%9A%84%E5%8E%9F%E7%90%86%E4%BB%A5%E5%8F%8Ajava%E4%B8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</id>
+    <link href="https://blog.741588.xyz/2023/05/19/sse%20%E7%9A%84%E5%8E%9F%E7%90%86%E4%BB%A5%E5%8F%8Ajava%E4%B8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://blog.741588.xyz/2023/05/19/sse%20%E7%9A%84%E5%8E%9F%E7%90%86%E4%BB%A5%E5%8F%8Ajava%E4%B8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/</id>
     <published>2023-05-19T02:39:27.000Z</published>
     <updated>2023-07-20T09:49:01.643Z</updated>
     
@@ -229,18 +229,18 @@
     
     
     
-    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    <category term="后端" scheme="https://blog.741588.xyz/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="java" scheme="https://blog.frzli.top/tags/java/"/>
+    <category term="java" scheme="https://blog.741588.xyz/tags/java/"/>
     
-    <category term="sse" scheme="https://blog.frzli.top/tags/sse/"/>
+    <category term="sse" scheme="https://blog.741588.xyz/tags/sse/"/>
     
   </entry>
   
   <entry>
     <title>nginx 中使用中文路径使用 try_files 的一些坑</title>
-    <link href="https://blog.frzli.top/2023/04/12/nginx-%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84%E4%BD%BF%E7%94%A8-try-files-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/"/>
-    <id>https://blog.frzli.top/2023/04/12/nginx-%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84%E4%BD%BF%E7%94%A8-try-files-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/</id>
+    <link href="https://blog.741588.xyz/2023/04/12/nginx-%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84%E4%BD%BF%E7%94%A8-try-files-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/"/>
+    <id>https://blog.741588.xyz/2023/04/12/nginx-%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84%E4%BD%BF%E7%94%A8-try-files-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/</id>
     <published>2023-04-12T12:38:05.000Z</published>
     <updated>2023-07-20T09:46:18.109Z</updated>
     
@@ -256,14 +256,14 @@
     
     
     
-    <category term="nginx" scheme="https://blog.frzli.top/tags/nginx/"/>
+    <category term="nginx" scheme="https://blog.741588.xyz/tags/nginx/"/>
     
   </entry>
   
   <entry>
     <title>Openresty 实现 WebDAV 功能 ，并且实现在 WebDAV 下多用户认证以及访问目录控制 - 2</title>
-    <link href="https://blog.frzli.top/2023/04/06/Openresty-%E5%AE%9E%E7%8E%B0-WebDAV-%E5%8A%9F%E8%83%BD-%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%AE%9E%E7%8E%B0%E5%9C%A8-WebDAV-%E4%B8%8B%E5%A4%9A%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95%E6%8E%A7%E5%88%B6-2/"/>
-    <id>https://blog.frzli.top/2023/04/06/Openresty-%E5%AE%9E%E7%8E%B0-WebDAV-%E5%8A%9F%E8%83%BD-%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%AE%9E%E7%8E%B0%E5%9C%A8-WebDAV-%E4%B8%8B%E5%A4%9A%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95%E6%8E%A7%E5%88%B6-2/</id>
+    <link href="https://blog.741588.xyz/2023/04/06/Openresty-%E5%AE%9E%E7%8E%B0-WebDAV-%E5%8A%9F%E8%83%BD-%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%AE%9E%E7%8E%B0%E5%9C%A8-WebDAV-%E4%B8%8B%E5%A4%9A%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95%E6%8E%A7%E5%88%B6-2/"/>
+    <id>https://blog.741588.xyz/2023/04/06/Openresty-%E5%AE%9E%E7%8E%B0-WebDAV-%E5%8A%9F%E8%83%BD-%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%AE%9E%E7%8E%B0%E5%9C%A8-WebDAV-%E4%B8%8B%E5%A4%9A%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95%E6%8E%A7%E5%88%B6-2/</id>
     <published>2023-04-06T03:37:28.000Z</published>
     <updated>2023-07-20T09:45:08.852Z</updated>
     
@@ -275,20 +275,20 @@
     
     
     
-    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    <category term="后端" scheme="https://blog.741588.xyz/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="webdav" scheme="https://blog.frzli.top/tags/webdav/"/>
+    <category term="webdav" scheme="https://blog.741588.xyz/tags/webdav/"/>
     
-    <category term="Openresty" scheme="https://blog.frzli.top/tags/Openresty/"/>
+    <category term="Openresty" scheme="https://blog.741588.xyz/tags/Openresty/"/>
     
-    <category term="lua" scheme="https://blog.frzli.top/tags/lua/"/>
+    <category term="lua" scheme="https://blog.741588.xyz/tags/lua/"/>
     
   </entry>
   
   <entry>
     <title>docker-compose + shell 一键化项目部署的一次尝试</title>
-    <link href="https://blog.frzli.top/2023/04/05/docker-compose-shell-%E4%B8%80%E9%94%AE%E5%8C%96%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%9A%84%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95/"/>
-    <id>https://blog.frzli.top/2023/04/05/docker-compose-shell-%E4%B8%80%E9%94%AE%E5%8C%96%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%9A%84%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95/</id>
+    <link href="https://blog.741588.xyz/2023/04/05/docker-compose-shell-%E4%B8%80%E9%94%AE%E5%8C%96%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%9A%84%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95/"/>
+    <id>https://blog.741588.xyz/2023/04/05/docker-compose-shell-%E4%B8%80%E9%94%AE%E5%8C%96%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%9A%84%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95/</id>
     <published>2023-04-05T06:14:33.000Z</published>
     <updated>2023-07-20T09:43:13.441Z</updated>
     
@@ -300,18 +300,18 @@
     
     
     
-    <category term="运维" scheme="https://blog.frzli.top/tags/%E8%BF%90%E7%BB%B4/"/>
+    <category term="运维" scheme="https://blog.741588.xyz/tags/%E8%BF%90%E7%BB%B4/"/>
     
-    <category term="docker" scheme="https://blog.frzli.top/tags/docker/"/>
+    <category term="docker" scheme="https://blog.741588.xyz/tags/docker/"/>
     
-    <category term="docker-compose" scheme="https://blog.frzli.top/tags/docker-compose/"/>
+    <category term="docker-compose" scheme="https://blog.741588.xyz/tags/docker-compose/"/>
     
   </entry>
   
   <entry>
     <title>一次线上事故的反思-MySQL中order by与limit一起使用的坑</title>
-    <link href="https://blog.frzli.top/2023/03/29/%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E4%BA%8B%E6%95%85%E7%9A%84%E5%8F%8D%E6%80%9D-MySQL%E4%B8%ADorder-by%E4%B8%8Elimit%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/"/>
-    <id>https://blog.frzli.top/2023/03/29/%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E4%BA%8B%E6%95%85%E7%9A%84%E5%8F%8D%E6%80%9D-MySQL%E4%B8%ADorder-by%E4%B8%8Elimit%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/</id>
+    <link href="https://blog.741588.xyz/2023/03/29/%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E4%BA%8B%E6%95%85%E7%9A%84%E5%8F%8D%E6%80%9D-MySQL%E4%B8%ADorder-by%E4%B8%8Elimit%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/"/>
+    <id>https://blog.741588.xyz/2023/03/29/%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E4%BA%8B%E6%95%85%E7%9A%84%E5%8F%8D%E6%80%9D-MySQL%E4%B8%ADorder-by%E4%B8%8Elimit%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9D%91/</id>
     <published>2023-03-29T01:11:36.000Z</published>
     <updated>2023-07-20T09:41:09.288Z</updated>
     
@@ -323,16 +323,16 @@
     
     
     
-    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    <category term="后端" scheme="https://blog.741588.xyz/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="MySQL" scheme="https://blog.frzli.top/tags/MySQL/"/>
+    <category term="MySQL" scheme="https://blog.741588.xyz/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Openresty 实现 WebDAV 功能 ，并且实现在 WebDAV 下多用户认证以及访问目录控制</title>
-    <link href="https://blog.frzli.top/2023/03/25/Openresty-%E5%AE%9E%E7%8E%B0-WebDAV-%E5%8A%9F%E8%83%BD-%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%AE%9E%E7%8E%B0%E5%9C%A8-WebDAV-%E4%B8%8B%E5%A4%9A%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95%E6%8E%A7%E5%88%B6/"/>
-    <id>https://blog.frzli.top/2023/03/25/Openresty-%E5%AE%9E%E7%8E%B0-WebDAV-%E5%8A%9F%E8%83%BD-%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%AE%9E%E7%8E%B0%E5%9C%A8-WebDAV-%E4%B8%8B%E5%A4%9A%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95%E6%8E%A7%E5%88%B6/</id>
+    <link href="https://blog.741588.xyz/2023/03/25/Openresty-%E5%AE%9E%E7%8E%B0-WebDAV-%E5%8A%9F%E8%83%BD-%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%AE%9E%E7%8E%B0%E5%9C%A8-WebDAV-%E4%B8%8B%E5%A4%9A%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95%E6%8E%A7%E5%88%B6/"/>
+    <id>https://blog.741588.xyz/2023/03/25/Openresty-%E5%AE%9E%E7%8E%B0-WebDAV-%E5%8A%9F%E8%83%BD-%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%AE%9E%E7%8E%B0%E5%9C%A8-WebDAV-%E4%B8%8B%E5%A4%9A%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%BB%A5%E5%8F%8A%E8%AE%BF%E9%97%AE%E7%9B%AE%E5%BD%95%E6%8E%A7%E5%88%B6/</id>
     <published>2023-03-25T12:26:54.000Z</published>
     <updated>2023-07-20T09:39:41.063Z</updated>
     
@@ -344,20 +344,20 @@
     
     
     
-    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    <category term="后端" scheme="https://blog.741588.xyz/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="webdav" scheme="https://blog.frzli.top/tags/webdav/"/>
+    <category term="webdav" scheme="https://blog.741588.xyz/tags/webdav/"/>
     
-    <category term="Openresty" scheme="https://blog.frzli.top/tags/Openresty/"/>
+    <category term="Openresty" scheme="https://blog.741588.xyz/tags/Openresty/"/>
     
-    <category term="lua" scheme="https://blog.frzli.top/tags/lua/"/>
+    <category term="lua" scheme="https://blog.741588.xyz/tags/lua/"/>
     
   </entry>
   
   <entry>
     <title>基础算法-二分答案</title>
-    <link href="https://blog.frzli.top/2023/03/21/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"/>
-    <id>https://blog.frzli.top/2023/03/21/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/</id>
+    <link href="https://blog.741588.xyz/2023/03/21/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"/>
+    <id>https://blog.741588.xyz/2023/03/21/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/</id>
     <published>2023-03-21T08:01:12.000Z</published>
     <updated>2023-07-20T09:34:27.078Z</updated>
     
@@ -369,14 +369,14 @@
     
     
     
-    <category term="算法" scheme="https://blog.frzli.top/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="https://blog.741588.xyz/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>go学习笔记和一些语法糖</title>
-    <link href="https://blog.frzli.top/2023/03/21/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://blog.frzli.top/2023/03/21/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://blog.741588.xyz/2023/03/21/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://blog.741588.xyz/2023/03/21/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2023-03-21T07:23:10.000Z</published>
     <updated>2023-07-20T09:27:33.239Z</updated>
     
@@ -388,16 +388,16 @@
     
     
     
-    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    <category term="后端" scheme="https://blog.741588.xyz/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="go" scheme="https://blog.frzli.top/tags/go/"/>
+    <category term="go" scheme="https://blog.741588.xyz/tags/go/"/>
     
   </entry>
   
   <entry>
     <title>SpringBoot创建自己的Start</title>
-    <link href="https://blog.frzli.top/2023/03/05/SpringBoot%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Starter/"/>
-    <id>https://blog.frzli.top/2023/03/05/SpringBoot%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Starter/</id>
+    <link href="https://blog.741588.xyz/2023/03/05/SpringBoot%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Starter/"/>
+    <id>https://blog.741588.xyz/2023/03/05/SpringBoot%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Starter/</id>
     <published>2023-03-05T13:33:26.000Z</published>
     <updated>2023-07-20T09:26:35.134Z</updated>
     
@@ -409,11 +409,11 @@
     
     
     
-    <category term="后端" scheme="https://blog.frzli.top/tags/%E5%90%8E%E7%AB%AF/"/>
+    <category term="后端" scheme="https://blog.741588.xyz/tags/%E5%90%8E%E7%AB%AF/"/>
     
-    <category term="sprigboot" scheme="https://blog.frzli.top/tags/sprigboot/"/>
+    <category term="sprigboot" scheme="https://blog.741588.xyz/tags/sprigboot/"/>
     
-    <category term="java" scheme="https://blog.frzli.top/tags/java/"/>
+    <category term="java" scheme="https://blog.741588.xyz/tags/java/"/>
     
   </entry>
   

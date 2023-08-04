@@ -1,3 +1,4 @@
+https://blog.741588.xyz/2023/08/04/java-Object%E7%B1%BB%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90/
 https://blog.741588.xyz/about/index.html
 https://blog.741588.xyz/2023/07/30/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/
 https://blog.741588.xyz/2023/07/24/%E4%BD%BF%E7%94%A8github-action-%E5%AE%9E%E7%8E%B0-maven-%E5%A4%9A%E6%A8%A1%E5%9D%97%E7%BC%96%E8%AF%91-Spring-Boot-native-image/

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.741588.xyz/2023/08/04/java-Object%E7%B1%BB%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
+    
+    <lastmod>2023-08-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.741588.xyz/about/index.html</loc>
     
     <lastmod>2023-08-03</lastmod>
@@ -175,7 +184,7 @@
 
   <url>
     <loc>https://blog.741588.xyz/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -183,168 +192,168 @@
   
   <url>
     <loc>https://blog.741588.xyz/tags/%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/sprigboot/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/java/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/webdav/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/Openresty/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/lua/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/%E8%BF%90%E7%BB%B4/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/docker/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/docker-compose/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/go/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/nginx/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/sse/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/MySQL/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/sso/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/%E5%8A%A0%E5%AF%86/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/ffmpeg/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/xxl-job/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/minio/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/jvm/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/github-action/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/maven/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.741588.xyz/tags/native-image/</loc>
-    <lastmod>2023-08-03</lastmod>
+    <lastmod>2023-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
